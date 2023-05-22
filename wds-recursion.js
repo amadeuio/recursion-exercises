@@ -44,4 +44,5 @@ const tree = {
   ],
 };
 
+// call the print children function on the example family tree
 printChildrenRecursive(tree);

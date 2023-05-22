@@ -17,3 +17,30 @@ function sumRangeRecursive(n, accum = 0) {
   }
   return sumRangeRecursive(n - 1, accum + n);
 }
+
+// print all children from family tree
+function printChildrenRecursive(t) {
+  t.children.forEach((child) => {
+    console.log(child.name);
+    printChildrenRecursive(child);
+  });
+}
+
+const tree = {
+  name: "John",
+  children: [
+    {
+      name: "Jim",
+      children: [],
+    },
+    {
+      name: "Zoe",
+      children: [
+        { name: "Kyle", children: [] },
+        { name: "Sophia", children: [] },
+      ],
+    },
+  ],
+};
+
+printChildrenRecursive(tree);

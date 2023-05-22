@@ -9,3 +9,11 @@ function countDownRecursive(n) {
   console.log(n);
   countDownRecursive(n - 1);
 }
+
+// sum range from 0 to n
+function sumRangeRecursive(n, accum = 0) {
+  if (n <= 0) {
+    return accum;
+  }
+  return sumRangeRecursive(n - 1, accum + n);
+}

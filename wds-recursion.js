@@ -18,7 +18,7 @@ function sumRangeRecursive(n, accum = 0) {
   return sumRangeRecursive(n - 1, accum + n);
 }
 
-// print all children from family tree
+// print all children from family tree of any nesting depth
 function printChildrenRecursive(t) {
   t.children.forEach((child) => {
     console.log(child.name);
@@ -26,6 +26,7 @@ function printChildrenRecursive(t) {
   });
 }
 
+// example of a family tree
 const tree = {
   name: "John",
   children: [

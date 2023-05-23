@@ -11,4 +11,21 @@ function factorial(n) {
   return n * factorial(n - 1);
 }
 
-console.log(factorial(5));
+/* factorial(5)
+  5 * facotorial(4)
+    4 * facotorial(3)
+      ... */
+
+// fibonacci sequence
+function fibonacci(n) {
+  // two base cases
+  if (n === 0) {
+    return 0;
+  }
+  if (n === 1) {
+    return 1;
+  }
+
+  // recursive case
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}

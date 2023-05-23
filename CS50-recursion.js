@@ -29,3 +29,30 @@ function fibonacci(n) {
   // recursive case
   return fibonacci(n - 1) + fibonacci(n - 2);
 }
+
+// write a recursive function collatz(n) that calculates
+// how many steps it takes to get to 1 if you start from n
+// and recurse as indicated by the conjecture
+
+// first find collatz sequence with recursive function
+function collatzSequence(n) {
+  // log each step
+  console.log(n);
+
+  // base case
+  if (n === 1) {
+    return 1;
+  }
+
+  // two recursive cases
+
+  if (n % 2 === 0) {
+    // n is even
+    return collatzSequence(n / 2);
+  } else {
+    // n is odd
+    return collatzSequence(3 * n + 1);
+  }
+}
+
+collatzSequence(6);

@@ -45,7 +45,6 @@ function collatzSequence(n) {
   }
 
   // two recursive cases
-
   if (n % 2 === 0) {
     // n is even
     return collatzSequence(n / 2);
@@ -55,4 +54,21 @@ function collatzSequence(n) {
   }
 }
 
-collatzSequence(6);
+// count steps until we reach 1
+function collatz(n) {
+  // base case
+  if (n === 1) {
+    return 0;
+  }
+
+  // two recursive cases
+  if (n % 2 === 0) {
+    // n is even
+    return 1 + collatz(n / 2);
+  } else {
+    // n is odd
+    return 1 + collatz(3 * n + 1);
+  }
+}
+
+console.log(collatz(27));

@@ -17,3 +17,12 @@ function sumRange(n) {
 /* Question 2: Power function
 Write a function called power which takes in a base and an exponent. If the exponent
 is 0, return 1. */
+function power(b, n) {
+  // base case
+  if (n === 0) {
+    return 1;
+  }
+
+  // recursive case
+  return b * power(b, n - 1);
+}

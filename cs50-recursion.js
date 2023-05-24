@@ -70,5 +70,3 @@ function collatz(n) {
     return 1 + collatz(3 * n + 1);
   }
 }
-
-console.log(collatz(27));

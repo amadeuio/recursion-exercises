@@ -61,3 +61,40 @@ function productOfArray(arr) {
   // recursive case
   return arr.shift() * productOfArray(arr);
 }
+
+/* Question 6: Search JS object
+Write a function called contains that searches for a value in a nested object. 
+It returns true if the object contains that value. */
+
+function contains(obj, val) {
+  for (let key in obj) {
+    // recursive case
+    if (typeof obj[key] === "object") {
+      return contains(obj[key], val);
+    }
+
+    // base case
+    if (obj[key] === val) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+var obj = {
+  data: {
+    info: {
+      stuff: {
+        thing: {
+          moreStuff: {
+            magicNumber: 44,
+            something: "foo2",
+          },
+        },
+      },
+    },
+  },
+};
+
+var val = "foo2";

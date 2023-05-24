@@ -98,3 +98,21 @@ var obj = {
 };
 
 var val = "foo2";
+
+/* Question 7: Parse a multi-dimensional array
+Given a multi-dimensional integer array, return the total number of integers
+stored inside this array */
+
+function totalIntegers(arr, count = 0) {
+  arr.forEach((item) => {
+    if (Array.isArray(item)) {
+      count = totalIntegers(item, count);
+    } else if (Number.isInteger(item)) {
+      count++;
+    }
+  });
+
+  return count;
+}
+
+totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // 7

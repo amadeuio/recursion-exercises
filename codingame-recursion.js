@@ -103,16 +103,22 @@ var val = "foo2";
 Given a multi-dimensional integer array, return the total number of integers
 stored inside this array */
 
-function totalIntegers(arr, count = 0) {
-  arr.forEach((item) => {
-    if (Array.isArray(item)) {
-      count = totalIntegers(item, count);
-    } else if (Number.isInteger(item)) {
-      count++;
-    }
-  });
+function totalIntegers(array) {
+  if (array.length === 0) return 0;
 
-  return count;
+  let total = 0;
+  let first = array.shift();
+
+  if (Array.isArray(first)) {
+    total += totalIntegers(first);
+  } else if (Number.isInteger(first)) {
+    total += 1;
+  }
+
+  return total + totalIntegers(array);
 }
 
 totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // 7
+
+/* Question 8:
+Write a function that sums squares of numbers in list that may contain more lists */

@@ -122,3 +122,21 @@ totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // 7
 
 /* Question 8:
 Write a function that sums squares of numbers in list that may contain more lists */
+
+var l = [[1, 2], 3];
+
+function sumSquares(l) {
+  if (l.length === 0) return 0;
+
+  let first = l.shift();
+
+  if (Array.isArray(first)) {
+    // first item is an array
+    return sumSquares(first) + sumSquares(l);
+  } else {
+    // first item is a number
+    return first ** 2 + sumSquares(l);
+  }
+}
+
+sumSquares(l); // 1 + 4 + 9 = 14

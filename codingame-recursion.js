@@ -52,14 +52,14 @@ every value in the array returns true when passed as parameter to the callback f
 Write a function called productOfArray which takes in an array of numbers and returns the 
 product of them all */
 
-function productOfArray(arr) {
+function productOfArray(array) {
   // base case
-  if (arr.length === 0) {
+  if (array.length === 0) {
     return 1;
   }
 
   // recursive case
-  return arr.shift() * productOfArray(arr);
+  return array.shift() * productOfArray(array);
 }
 
 /* Question 6: Search JS object
@@ -125,18 +125,25 @@ Write a function that sums squares of numbers in list that may contain more list
 
 var l = [[1, 2], 3];
 
-function sumSquares(l) {
-  if (l.length === 0) return 0;
+function sumSquares(array) {
+  if (array.length === 0) return 0;
 
-  let first = l.shift();
+  let first = array.shift();
 
   if (Array.isArray(first)) {
     // first item is an array
-    return sumSquares(first) + sumSquares(l);
+    return sumSquares(first) + sumSquares(array);
   } else {
     // first item is a number
-    return first ** 2 + sumSquares(l);
+    return first ** 2 + sumSquares(array);
   }
 }
 
 sumSquares(l); // 1 + 4 + 9 = 14
+
+/* Question 9:
+The function should return an array containing repetitions of the number argument. 
+For instance, replicate(3, 5) should return [5,5,5]. If the times argument is negative, 
+return an empty array. */
+
+function replicate(n, x) {}

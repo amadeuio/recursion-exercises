@@ -146,4 +146,13 @@ The function should return an array containing repetitions of the number argumen
 For instance, replicate(3, 5) should return [5,5,5]. If the times argument is negative, 
 return an empty array. */
 
-function replicate(n, x) {}
+function replicate(n, x, array = []) {
+  // base case
+  if (n <= 0) return array;
+
+  // recursive case
+  array.push(x);
+  return replicate(n - 1, x, array);
+}
+
+replicate(3, 5);

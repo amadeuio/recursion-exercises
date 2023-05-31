@@ -133,8 +133,6 @@ totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // 7
 /* Question 8:
 Write a function that sums squares of numbers in list that may contain more lists */
 
-var l = [[1, 2], 3];
-
 function sumSquares(array) {
   // base case
   if (array.length === 0) return 0;
@@ -151,7 +149,7 @@ function sumSquares(array) {
   }
 }
 
-sumSquares(l); // 1 + 4 + 9 = 14
+sumSquares([[1, 2], 3]); // 1 + 4 + 9 = 14
 
 /* Question 9:
 The function should return an array containing repetitions of the number argument. 

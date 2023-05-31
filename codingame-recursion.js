@@ -14,6 +14,8 @@ function sumRange(n) {
   return n + sumRange(n - 1);
 }
 
+sumRange(4); // 10
+
 /* Question 2: Power function
 Write a function called power which takes in a base and an exponent. If the exponent
 is 0, return 1. */
@@ -27,6 +29,8 @@ function power(b, n) {
   // recursive case
   return b * power(b, n - 1);
 }
+
+power(2, 6); // 64
 
 /* Question 3: Calculate factorial
 Write a function that returns the factorial of a number. As a quick refresher, a factorial 
@@ -43,6 +47,8 @@ function factorial(n) {
   // recursive case
   return n * factorial(n - 1);
 }
+
+factorial(5); // 120
 
 /* Question 4: Check all values in an array
 Write a function called all which accepts an array and a callback and returns true if 
@@ -61,6 +67,8 @@ function productOfArray(array) {
   // recursive case
   return array.shift() * productOfArray(array);
 }
+
+productOfArray([1, 2, 3]); // 6
 
 /* Question 6: Search JS object
 Write a function called contains that searches for a value in a nested object. 
@@ -82,7 +90,7 @@ function contains(obj, val) {
   return false;
 }
 
-var obj = {
+var nestedObject = {
   data: {
     info: {
       stuff: {
@@ -97,15 +105,17 @@ var obj = {
   },
 };
 
-var val = "foo2";
+contains(nestedObject, 44); // true
 
 /* Question 7: Parse a multi-dimensional array
 Given a multi-dimensional integer array, return the total number of integers
 stored inside this array */
 
 function totalIntegers(array) {
+  // base case
   if (array.length === 0) return 0;
 
+  // recursive case
   let total = 0;
   let first = array.shift();
 
@@ -126,8 +136,10 @@ Write a function that sums squares of numbers in list that may contain more list
 var l = [[1, 2], 3];
 
 function sumSquares(array) {
+  // base case
   if (array.length === 0) return 0;
 
+  // recursive case
   let first = array.shift();
 
   if (Array.isArray(first)) {
@@ -155,4 +167,4 @@ function replicate(n, x, array = []) {
   return replicate(n - 1, x, array);
 }
 
-replicate(3, 5);
+replicate(3, 5); // [5, 5, 5]
